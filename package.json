@@ -1,6 +1,7 @@
 {
   "name": "vercel-calculator",
   "version": "1.0.0",
+  "type": "module",
   "description": "Calculator API using Node.js, ready for Vercel CI/CD",
   "main": "api/calc.js",
   "scripts": {

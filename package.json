@@ -14,9 +14,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "extensionsToTreatAsEsm": [".js"],
     "roots": ["<rootDir>/tests"]
   },
   "author": "Your Name",
   "license": "MIT"
 }
+

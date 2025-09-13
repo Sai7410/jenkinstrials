@@ -1,0 +1,20 @@
+{
+  "name": "vercel-calculator",
+  "version": "1.0.0",
+  "description": "Calculator API using Node.js, ready for Vercel CI/CD",
+  "main": "api/calc.js",
+  "scripts": {
+    "start": "vercel dev",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": ["<rootDir>/tests"]
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

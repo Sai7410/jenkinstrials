@@ -12,9 +12,12 @@
   "devDependencies": {
     "jest": "^29.0.0"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "roots": ["<rootDir>/tests"]
+  "type": "module",
+"jest": {
+  "testEnvironment": "node",
+  "extensionsToTreatAsEsm": [".js"]
+}
+
   },
   "author": "Your Name",
   "license": "MIT"

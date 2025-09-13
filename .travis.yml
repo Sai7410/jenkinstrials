@@ -1,0 +1,24 @@
+# .travis.yml
+
+language: python
+
+python:
+  - "3.8"
+
+# Install dependencies
+install:
+  - pip install --upgrade pip
+  - pip install -e .
+
+# Run tests using unittest
+script:
+  - python -m unittest discover -s tests
+
+# Deploy to PyPI on Git tag push
+deploy:
+  provider: pypi
+  username: "projectuser"
+  password: "project123"
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true

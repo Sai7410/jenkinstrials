@@ -1,4 +1,4 @@
-import { add, subtract, divide } from "../api/calc";
+import { add, subtract, divide } from "../api/calc.js";
 
 describe("Calculator functions", () => {
   test("addition works correctly", () => {
@@ -21,4 +21,5 @@ describe("Calculator functions", () => {
     expect(() => add("a", 5)).toThrow("Inputs must be numbers.");
   });
 });
+
 

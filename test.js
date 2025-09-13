@@ -1,29 +1,23 @@
-// api/calc.js
-import { add, subtract, divide } from "./math";
+import { add, subtract, divide } from "../api/math";
 
-export default function handler(req, res) {
-  try {
-    const { operation, a, b } = req.query; // e.g., /api/calc?operation=add&a=2&b=3
-    const numA = parseFloat(a);
-    const numB = parseFloat(b);
-    let result;
+describe("Calculator functions", () => {
+  test("addition works correctly", () => {
+    expect(add(3, 5)).toBe(8);
+  });
 
-    switch (operation) {
-      case "add":
-        result = add(numA, numB);
-        break;
-      case "subtract":
-        result = subtract(numA, numB);
-        break;
-      case "divide":
-        result = divide(numA, numB);
-        break;
-      default:
-        throw new Error("Invalid operation");
-    }
+  test("subtraction works correctly", () => {
+    expect(subtract(10, 4)).toBe(6);
+  });
 
-    res.status(200).json({ result });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-}
+  test("division works correctly", () => {
+    expect(divide(10, 2)).toBe(5);
+  });
+
+  test("division by zero throws error", () => {
+    expect(() => divide(5, 0)).toThrow("Division by zero is not allowed.");
+  });
+
+  test("invalid input throws error", () => {
+    expect(() => add("a", 5)).toThrow("Inputs must be numbers.");
+  });
+});

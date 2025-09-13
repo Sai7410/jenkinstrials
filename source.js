@@ -1,6 +1,29 @@
-// api/calc.js
-import { add, subtract, divide } from "./math";
+// Calculator functions (standalone)
+function validateInput(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new Error("Inputs must be numbers.");
+  }
+}
 
+export function add(a, b) {
+  validateInput(a, b);
+  return a + b;
+}
+
+export function subtract(a, b) {
+  validateInput(a, b);
+  return a - b;
+}
+
+export function divide(a, b) {
+  validateInput(a, b);
+  if (b === 0) {
+    throw new Error("Division by zero is not allowed.");
+  }
+  return a / b;
+}
+
+// Serverless endpoint
 export default function handler(req, res) {
   try {
     const { operation, a, b } = req.query; // e.g., /api/calc?operation=add&a=2&b=3

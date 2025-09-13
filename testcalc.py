@@ -1,23 +1,23 @@
-import unittest
-from calculator import core
+import { add, subtract, divide } from "../api/math";
 
-class TestCalculator(unittest.TestCase):
-    def test_addition(self):
-        self.assertEqual(core.add(3, 5), 8)
+describe("Calculator functions", () => {
+  test("addition works correctly", () => {
+    expect(add(3, 5)).toBe(8);
+  });
 
-    def test_subtraction(self):
-        self.assertEqual(core.subtract(10, 4), 6)
+  test("subtraction works correctly", () => {
+    expect(subtract(10, 4)).toBe(6);
+  });
 
-    def test_division(self):
-        self.assertEqual(core.divide(10, 2), 5)
+  test("division works correctly", () => {
+    expect(divide(10, 2)).toBe(5);
+  });
 
-    def test_division_by_zero(self):
-        with self.assertRaises(ZeroDivisionError):
-            core.divide(5, 0)
+  test("division by zero throws error", () => {
+    expect(() => divide(5, 0)).toThrow("Division by zero is not allowed.");
+  });
 
-    def test_invalid_input(self):
-        with self.assertRaises(ValueError):
-            core.add("a", 5)
-
-if __name__ == "__main__":
-    unittest.main()
+  test("invalid input throws error", () => {
+    expect(() => add("a", 5)).toThrow("Inputs must be numbers.");
+  });
+});

@@ -1,8 +1,8 @@
 {
   "name": "vercel-calculator",
   "version": "1.0.0",
+  "description": "Calculator API using Node.js ES Modules, ready for Vercel CI/CD",
   "type": "module",
-  "description": "Calculator API using Node.js, ready for Vercel CI/CD",
   "main": "api/calc.js",
   "scripts": {
     "start": "vercel dev",
@@ -12,12 +12,10 @@
   "devDependencies": {
     "jest": "^29.0.0"
   },
-  "type": "module",
-"jest": {
-  "testEnvironment": "node",
-  "extensionsToTreatAsEsm": [".js"]
-}
-
+  "jest": {
+    "testEnvironment": "node",
+    "extensionsToTreatAsEsm": [".js"],
+    "roots": ["<rootDir>/tests"]
   },
   "author": "Your Name",
   "license": "MIT"
